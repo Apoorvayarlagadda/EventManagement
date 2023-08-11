@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>doc</title>
+    <link rel="stylesheet" href="./right.css">
+</head>
+
+<body>
+    <center class="block">
+        <h3>Login Form</h3>
+        <!-- <br> -->
+        <form action="#" onsubmit="return validateform()">
+            <div>
+                <label class="form__label">Username: </label><br>
+                <input type="text" id="name" class="form__input">
+
+            </div>
+            <div>
+                <label class="form__label">Password: </label><br>
+                <input type="password" id="pass" class="form__input">
+
+            </div>
+            <br>
+            <div>
+                <button class="button-60" role="button">Submit</button>
+
+            </div>
+        </form>
+    </center>
+
+    <script>
+        function validateform() {
+            var userformat = /\d+$/g;
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("pass").value;
+            if (name == null || name == "") {
+                alert("username can not be empty.");
+                return false;
+            }
+
+            else if (!userformat.test(name)) {
+                alert("Enter a valid username!");
+            }
+            else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            else {
+                alert("Login successfully!");
+            }
+        }   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<html>
+
+<head>
+	<title> Registration Form</title>
+	<link rel="stylesheet" href="./right.css">
+</head>
+
+<body>
+	<center class="block-2">
+		<h3 style="text-align:center;"> REGISTRATION FORM</h3>
+		<form action="#" onsubmit="return validateform()">
+
+			<table align="center" cellpadding="10">
+
+				<tr>
+					<td>NAME</td>
+					<td><input type="text" id="name" maxlength="30" class="form_input" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>PASSWORD</td>
+					<td><input type="password" id="pwd" class="form_input" /></td>
+				</tr>
+
+				<tr>
+					<td>EMAIL ID</td>
+					<td><input type="text" id="mailid" maxlength="100" class="form_input" /></td>
+				</tr>
+
+				<tr>
+					<td>MOBILE NUMBER</td>
+					<td>
+						<input type="text" id="mbn" maxlength="10" minlength="10" class="form_input" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>GENDER</td>
+					<td>
+						Male <input type="radio" name="Gender" value="Male" />
+						Female <input type="radio" name="Gender" value="Female" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>DATE OF BIRTH</td>
+
+					<td>
+						<input type="date" class="form_input" />
+					</td>
+				</tr>
+
+				<!-- <tr>
+					<td>ADDRESS <br /><br /><br /></td>
+					<td><textarea name="Address" rows="4" cols="30"></textarea></td>
+				</tr> -->
+
+
+				<tr>
+					<td>CITY</td>
+					<td><input type="text" name="City" maxlength="30" class="form_input" />
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>PIN CODE</td>
+					<td><input type="text" name="Pin_Code" maxlength="6" class="form_input" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>STATE</td>
+					<td><input type="text" name="State" maxlength="30" class="form_input" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>COUNTRY</td>
+					<td><input type="text" name="Country" readonly="readonly" class="form_input" /></td>
+				</tr>
+
+				<tr>
+					<td style="text-align:center;" colspan="2">
+						<input type="submit" value="Submit" class="button-60">
+						<input type="reset" value="Reset" class="button-60">
+					</td>
+				</tr>
+			</table>
+
+		</form>
+	</center>
+	<script>
+		function validateform() {
+			var reg = /\d+$/g;
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var name = document.getElementById("name").value;
+			var password = document.getElementById("pwd").value;
+			var mail = document.getElementById("mailid").value;
+			if (name == null || name == "") {
+				alert("username can not be empty.");
+				return false;
+			}
+			if (reg.test(name)) {
+				alert("username should be alphabets only.");
+				return false;
+			}
+			if (name.length < 6) {
+				alert("name must be at least 6 characters long.");
+				return false;
+			}
+			if (password.length < 6) {
+				alert("Password must be at least 6 characters long.");
+				return false;
+			}
+			if (!mailformat.test(mail)) {
+				alert("Enter a valid email address!");
+				return false;
+			}
+		}   
+	</script>
+</body>
+
+</html>
